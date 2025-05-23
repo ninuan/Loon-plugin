@@ -3,7 +3,7 @@
 #!author= 𝑨梦 𝑪𝒉𝒙𝒎𝟏𝟎𝟐𝟑
 #!system = iOS
 #!system_version = 15
-#!loon_version = 3.8.1(866)
+#!loon_version = 3.3.0(853)
 
 [rewrite]
 ^https?:\/\/us\.l\.qq\.com\/exapp url reject-200
