@@ -8,6 +8,7 @@
 [script]
 http-response ^https?:\/\/userapi\.qiekj\.com\/appTitle\/get script-path = https://raw.githubusercontent.com/ninuan/Loon-plugin/refs/heads/main/js/pangguai/emptymylist.js, requires-body = true, tag = 去除我的页面中的线上兼职等
 http-response ^https?:\/\/userapi\.qiekj\.com\/slot\/get script-path = https://raw.githubusercontent.com/ninuan/Loon-plugin/refs/heads/main/js/pangguai/emptylunbo.js, requires-body = true, tag = 去除首页轮播图
+http-response ^https?:\/\/userapi\.qiekj\.com\/bottomBar\/get script-path = https://raw.githubusercontent.com/ninuan/Loon-plugin/refs/heads/main/js/pangguai/bottombar.js, requires-body = true, tag = 去除导航栏校园墙
 
 [mitm]
 hostname = userapi.qiekj.com
