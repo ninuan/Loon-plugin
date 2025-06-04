@@ -1,0 +1,12 @@
+#!name= 胖乖生活去广告
+#!desc= 去除我的
+#!author= ninuan
+#!system = iOS
+#!system_version = 15
+#!loon_version = 3.3.0(853)
+
+[rewrite]
+http-response ^https?:\/\/example\.com\/conf\/server-mapping script-path = remove_ads.js, requires-body = true, tag = 移除广告,argument=[{arg1},{arg2},{arg3}]
+
+[mitm]
+hostname = us.l.qq.com, ossweb-img.qq.com, mlol.qt.qq.com
