@@ -1,0 +1,11 @@
+#!name=12306 去广告
+#!desc=拦截 12306 广告
+#!author=ddgksf2013
+#!version=1.0
+
+[Script]
+# 处理 12306 广告返回
+http-response ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/12306.js, requires-body=true, timeout=10, tag=12306-去广告
+
+[MITM]
+hostname = ad.12306.cn
