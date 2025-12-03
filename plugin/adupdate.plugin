@@ -6,18 +6,21 @@
 #!update=2024-06-01 23:15:00
 #############################################
 
-# 定义代理选择器变量，用户可以选择 'PROXY'、'DIRECT' 或 'REJECT'
-# 'Apple_Update_Mode' 可以通过插件界面来动态修改
-SELECTOR,Apple_Update_Mode,PROXY,DIRECT,REJECT
+[Plugin]
+# 定义插件参数，让用户在UI界面选择策略
+# 默认值为 REJECT (屏蔽)，可选 DIRECT (直连) 或 PROXY (代理)
+argument = Mode=select, "REJECT", "DIRECT", "PROXY", desc="策略模式 (选REJECT屏蔽)"
 
-# Apple 更新规则 - 使用动态选择器，依据用户选择的代理模式来处理流量
-DOMAIN,ns.itunes.apple.com,Apple_Update_Mode
-DOMAIN,appldnld.apple.com,Apple_Update_Mode
-DOMAIN,mesu.apple.com,Apple_Update_Mode
-DOMAIN,xp.apple.com,Apple_Update_Mode
-DOMAIN,gdmf.apple.com,Apple_Update_Mode
-DOMAIN-SUFFIX,iadsdk.apple.com,Apple_Update_Mode
-DOMAIN-SUFFIX,ads.internal.unity3d.com,Apple_Update_Mode
-DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com,Apple_Update_Mode
-DOMAIN-SUFFIX,unityads.unity3d.com,Apple_Update_Mode
+[Rule]
+# Apple 更新相关域名
+DOMAIN,ns.itunes.apple.com,{Mode}
+DOMAIN,appldnld.apple.com,{Mode}
+DOMAIN,mesu.apple.com,{Mode}
+DOMAIN,xp.apple.com,{Mode}
+DOMAIN,gdmf.apple.com,{Mode}
 
+# 广告相关域名 (保留了你原配置中的Unity及Apple广告域名)
+DOMAIN-SUFFIX,iadsdk.apple.com,{Mode}
+DOMAIN-SUFFIX,ads.internal.unity3d.com,{Mode}
+DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com,{Mode}
+DOMAIN-SUFFIX,unityads.unity3d.com,{Mode}
