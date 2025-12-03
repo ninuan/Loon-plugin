@@ -6,10 +6,10 @@
 #!update=2024-06-01 23:15:00
 #############################################
 
-[Plugin]
+[Argument]
 # 定义插件参数，让用户在UI界面选择策略
 # 默认值为 REJECT (屏蔽)，可选 DIRECT (直连) 或 PROXY (代理)
-argument = Mode=select, "REJECT", "DIRECT", "PROXY", desc="策略模式 (选REJECT屏蔽)"
+Mode=select, "REJECT", "DIRECT", "PROXY", desc="策略模式 (选REJECT屏蔽)"
 
 [Rule]
 # Apple 更新相关域名
