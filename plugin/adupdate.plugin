@@ -6,17 +6,18 @@
 #!update=2024-06-01 23:15:00
 #############################################
 
-# 设定一个变量来控制代理模式，默认值为 PROXY
-RULE-SET, Apple_Update_Rules
+# 定义代理选择器变量，用户可以选择 'PROXY'、'DIRECT' 或 'REJECT'
+# 'Apple_Update_Mode' 可以通过插件界面来动态修改
+SELECTOR,Apple_Update_Mode,PROXY,DIRECT,REJECT
 
-# Apple 更新规则 - 这些可以由插件动态控制是否通过代理、直连或者拒绝
-DOMAIN,ns.itunes.apple.com,SELECTOR,Apple_Update_Selector
-DOMAIN,appldnld.apple.com,SELECTOR,Apple_Update_Selector
-DOMAIN,mesu.apple.com,SELECTOR,Apple_Update_Selector
-DOMAIN,xp.apple.com,SELECTOR,Apple_Update_Selector
-DOMAIN,gdmf.apple.com,SELECTOR,Apple_Update_Selector
-DOMAIN-SUFFIX,iadsdk.apple.com,SELECTOR,Apple_Update_Selector
-DOMAIN-SUFFIX,ads.internal.unity3d.com,SELECTOR,Apple_Update_Selector
-DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com,SELECTOR,Apple_Update_Selector
-DOMAIN-SUFFIX,unityads.unity3d.com,SELECTOR,Apple_Update_Selector
+# Apple 更新规则 - 使用动态选择器，依据用户选择的代理模式来处理流量
+DOMAIN,ns.itunes.apple.com,Apple_Update_Mode
+DOMAIN,appldnld.apple.com,Apple_Update_Mode
+DOMAIN,mesu.apple.com,Apple_Update_Mode
+DOMAIN,xp.apple.com,Apple_Update_Mode
+DOMAIN,gdmf.apple.com,Apple_Update_Mode
+DOMAIN-SUFFIX,iadsdk.apple.com,Apple_Update_Mode
+DOMAIN-SUFFIX,ads.internal.unity3d.com,Apple_Update_Mode
+DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com,Apple_Update_Mode
+DOMAIN-SUFFIX,unityads.unity3d.com,Apple_Update_Mode
 
