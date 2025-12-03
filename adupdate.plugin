@@ -1,0 +1,22 @@
+#!name=屏蔽ios更新
+#!desc=选择reject来屏蔽
+#!author=奶思
+#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/NaiSi_01.png
+#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/apple_update.list
+#!update=2024-06-01 23:15:00
+#############################################
+
+# 设定一个变量来控制代理模式，默认值为 PROXY
+RULE-SET, Apple_Update_Rules
+
+# Apple 更新规则 - 这些可以由插件动态控制是否通过代理、直连或者拒绝
+DOMAIN,ns.itunes.apple.com,SELECTOR,Apple_Update_Selector
+DOMAIN,appldnld.apple.com,SELECTOR,Apple_Update_Selector
+DOMAIN,mesu.apple.com,SELECTOR,Apple_Update_Selector
+DOMAIN,xp.apple.com,SELECTOR,Apple_Update_Selector
+DOMAIN,gdmf.apple.com,SELECTOR,Apple_Update_Selector
+DOMAIN-SUFFIX,iadsdk.apple.com,SELECTOR,Apple_Update_Selector
+DOMAIN-SUFFIX,ads.internal.unity3d.com,SELECTOR,Apple_Update_Selector
+DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com,SELECTOR,Apple_Update_Selector
+DOMAIN-SUFFIX,unityads.unity3d.com,SELECTOR,Apple_Update_Selector
+
