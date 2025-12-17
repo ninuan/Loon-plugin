@@ -1,0 +1,22 @@
+
+#!name=屏蔽ios证书状态确定
+#!desc=屏蔽证书签名
+#!author=niuan
+#!update=2025-12-17 23:15:00
+#############################################
+
+[Rule]
+
+DOMAIN,ocsp.apple.com,REJECT
+
+DOMAIN,ocsp2.apple.com,REJECT
+
+DOMAIN,valid.apple.com,REJECT
+
+DOMAIN,crl.apple.com,REJECT
+
+DOMAIN,certs.apple.com,REJECT
+
+DOMAIN,appattest.apple.com,REJECT
+
+DOMAIN,vpp.itunes.apple.com,REJECT
